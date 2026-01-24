@@ -10,4 +10,4 @@ __pycache__/
 /uploads/
 
 # Ignore your API keys if you ever save them in a file like .env
-.env
+# .env
