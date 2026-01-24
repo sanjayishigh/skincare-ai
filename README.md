@@ -26,8 +26,7 @@ A sophisticated web application that analyzes facial images to provide personali
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+cd skincare-ai
 ```
 
 ### 2. Create a Virtual Environment
