@@ -16,8 +16,7 @@ A sophisticated web application that analyzes facial images to provide personali
 ## 🛠️ Tech Stack
 
 - **Language:** Python 3.12
-- **Framework:** Flask
-- **AI/ML:** OpenAI (OpenRouter API), Pandas, Pillow (PIL)
+- **Framework:** Flask, OpenAI (OpenRouter API), Pandas, Pillow (PIL)
 - **Environment:** Dotenv for secure configuration
 
 ---
