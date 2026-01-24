@@ -60,19 +60,19 @@ pip install -r requirements.txt
 
 In the project root (same directory as `app.py`), create a file named `.env`:
 ```env
-OPENROUTER_API_KEY=your_openrouter_api_key_here
+OPENAI_API_KEY=your_openrouter_api_key_here
 ```
 
 ### Alternative: Set Environment Variable Manually
 
 **CMD:**
 ```cmd
-set OPENROUTER_API_KEY=your_openrouter_api_key_here
+set OPENAI_API_KEY=your_openrouter_api_key_here
 ```
 
 **PowerShell:**
 ```powershell
-$env:OPENROUTER_API_KEY="your_openrouter_api_key_here"
+$env:OPENAI_API_KEY="your_openrouter_api_key_here"
 ```
 
 ---
