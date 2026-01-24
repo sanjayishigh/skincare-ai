@@ -1,0 +1,13 @@
+# Ignore the virtual environment
+/venv/
+/env/
+
+# Ignore Python cache files (these are those annoying folder that appear automatically)
+__pycache__/
+*.pyc
+
+# Ignore user uploaded images (IMPORTANT for your face scanner)
+/uploads/
+
+# Ignore your API keys if you ever save them in a file like .env
+.env

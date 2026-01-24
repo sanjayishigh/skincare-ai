@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Skincare Finder</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    /* --- Reset & Global --- */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff5f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    /* --- Navbar Styles --- */
+    .navbar {
+      width: 100%;
+      background: #ffffff;
+      padding: 15px 40px;
+      box-shadow: 0 4px 15px rgba(255, 182, 193, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+
+    /* Logo Style */
+    .nav-brand {
+      font-size: 22px;
+      font-weight: 650;
+      color: #d63384;
+      /* Hot Pink */
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-brand i {
+      font-size: 20px;
+    }
+
+    /* Cute Button Style */
+    .nav-btn {
+      background-color: #ffeef2;
+      /* Light Pink Default */
+      color: #d63384;
+      /* Hot Pink Text */
+      border: 2px solid #ffccd5;
+      padding: 10px 25px;
+      border-radius: 50px;
+      /* Pill shape */
+      text-decoration: none;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Hover State: Solid Pink */
+    .nav-btn:hover {
+      background-color: #d63384;
+      color: white;
+      border-color: #d63384;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(214, 51, 132, 0.3);
+    }
+
+    /* --- Layout --- */
+    .container {
+      margin-top: 110px;
+      /* Space for navbar */
+      width: 90%;
+      max-width: 900px;
+      padding-bottom: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="/" class="nav-brand">
+      <i class="fas fa-wand-magic-sparkles"></i> SkinGenius AI
+    </a>
+    <a href="/analyze" class="nav-btn">
+      <i class="fas fa-camera"></i> AI Face Scanner
+    </a>
+  </nav>
+
+  <div class="container">
+    <header>
+      <h1 style="color: #d63384; text-align: center;">Smart Skincare Finder</h1>
+      <p style="text-align: center; color: #666;">Find the perfect product for your age and skin goals.</p>
+    </header>
+
+    <section class="form-section">
+      <div class="form-group">
+        <label>Your Age</label>
+        <input type="number" id="age" placeholder="e.g. 25" min="12" max="99">
+      </div>
+
+      <div class="form-group">
+        <label>Skin Type</label>
+        <select id="skinType">
+          <option value="Normal">Normal</option>
+          <option value="Dry">Dry</option>
+          <option value="Oily">Oily</option>
+          <option value="Combination">Combination</option>
+          <option value="Sensitive">Sensitive</option>
+          <option value="Acne-prone">Acne-prone</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Primary Concern</label>
+        <select id="concern">
+          <option value="Acne">Acne</option>
+          <option value="Anti-aging">Anti-aging / Fine Lines</option>
+          <option value="Dullness">Dullness</option>
+          <option value="Dryness">Dryness</option>
+          <option value="Hyperpigmentation">Dark Spots / Hyperpigmentation</option>
+          <option value="Oiliness">Oiliness</option>
+          <option value="Pores">Large Pores</option>
+          <option value="Redness">Redness</option>
+          <option value="Sensitivity">Sensitivity</option>
+          <option value="Uneven texture">Uneven Texture</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Looking for...</label>
+        <select id="productType">
+          <option value="Cleanser">Cleanser</option>
+          <option value="Moisturizer">Moisturizer</option>
+          <option value="Serum">Serum</option>
+          <option value="Sunscreen">Sunscreen</option>
+          <option value="Toner">Toner</option>
+          <option value="Face Mask">Face Mask</option>
+          <option value="Eye Cream">Eye Cream</option>
+          <option value="Facial Oil">Facial Oil</option>
+          <option value="Exfoliant">Exfoliant</option>
+        </select>
+      </div>
+
+      <button onclick="getRecommendations()">Find Matches</button>
+    </section>
+
+    <div id="loading" class="hidden">Scanning database...</div>
+
+    <section id="results" class="results-grid"></section>
+
+    <div id="routineModal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Expert Analysis & Routine</h2>
+        <div id="routineText"></div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
