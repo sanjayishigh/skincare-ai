@@ -125,18 +125,6 @@ http://127.0.0.1:5000
 
 ---
 
-## 📄 License
-
-[Add your license here, e.g., MIT License]
-
----
-
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/your-username/your-repo-name/issues).
-
----
-
 ## 👤 Author
 
 - GitHub: [@sanjayishigh](https://github.com/sanjayishigh)
